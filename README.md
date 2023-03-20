@@ -19,4 +19,4 @@ Tests are powered by [Chopsticks](http://github.com/AcalaNetwork/chopsticks) to 
 ### Earn(to do)
 
 ## To do
-1. Enhance XCM tests by using Bridge SDK instead of Polkadot.js - i.e. full e2e
+1. Add support of using Polkawallet's [Bridge SDK](https://github.com/polkawallet-io/bridge)
