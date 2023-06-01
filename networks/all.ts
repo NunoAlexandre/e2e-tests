@@ -8,6 +8,7 @@ import moonbeamConfig from './moonbeam'
 import polkadot9420Config from './polkadot9420'
 import polkadotConfig from './polkadot'
 import statemintConfig from './statemint'
+import centrifugeConfig from './centrifuge'
 
 const all = {
   polkadot: polkadotConfig,
@@ -18,6 +19,7 @@ const all = {
   acala2180: acala2180Config,
   moonbeam: moonbeamConfig,
   hydraDX: hydraDXConfig,
+  centrifuge: centrifugeConfig,
 } satisfies Record<string, Config>
 
 export default all
