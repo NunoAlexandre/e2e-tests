@@ -89,7 +89,7 @@ const tests = [
       },
     },
   },
-  polkadot <-> centrifuge
+  // polkadot <-> centrifuge
   {
     from: 'polkadot',
     to: 'centrifuge',
