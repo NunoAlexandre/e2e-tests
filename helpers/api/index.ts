@@ -191,6 +191,10 @@ export const query = {
     (token: any) =>
     ({ api }: { api: ApiPromise }, address: string) =>
       api.query.tokens.accounts(address, token),
+  ormlTokens:
+    (token: any) =>
+    ({ api }: { api: ApiPromise }, address: string) =>
+      api.query.ormlTokens.accounts(address, token),
   assets:
     (token: number | bigint) =>
     ({ api }: { api: ApiPromise }, address: string) =>
