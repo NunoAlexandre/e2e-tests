@@ -1,5 +1,34 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`'altair' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > balance on from chain 1`] = `
+{
+  "free": 0,
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`'altair' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > balance on to chain 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "flags": 0,
+    "free": 10000000000000,
+    "frozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 0,
+  "providers": 1,
+  "sufficients": 0,
+}
+`;
+
+exports[`'altair' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > from chain ump messages 1`] = `[]`;
+
+exports[`'altair' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > to chain ump events 1`] = `[]`;
+
+exports[`'altair' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > tx events 1`] = `[]`;
+
 exports[`'karura' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > balance on from chain 1`] = `
 {
   "free": 9000000000000,
