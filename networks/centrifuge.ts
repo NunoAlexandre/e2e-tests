@@ -25,5 +25,5 @@ export const centrifuge = {
 
 export const altair = {
   paraId: 2088,
-  ksm: 340282366920938463463374607431768211455n,
+  ksm: { ForeignAsset: 3 },
 } as const
