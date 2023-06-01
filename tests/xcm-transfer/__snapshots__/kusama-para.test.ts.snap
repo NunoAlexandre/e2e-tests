@@ -1,5 +1,30 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`'altair' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > balance on from chain 1`] = `
+{
+  "free": 10000000,
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`'altair' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > balance on to chain 1`] = `
+{
+  "balance": 1000000000,
+  "extra": null,
+  "isFrozen": false,
+  "reason": {
+    "consumer": null,
+  },
+}
+`;
+
+exports[`'altair' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > from chain hrmp messages 1`] = `[]`;
+
+exports[`'altair' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > to chain xcm events 1`] = `[]`;
+
+exports[`'altair' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > tx events 1`] = `[]`;
+
 exports[`'basilisk' -> 'karura' xcm transfer 'DAI' > xtokens transfer > balance on from chain 1`] = `
 {
   "free": 9000000000000000000,
@@ -562,6 +587,49 @@ exports[`'karura' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > tx eve
     },
     "method": "TransferredMultiAssets",
     "section": "xTokens",
+  },
+]
+`;
+
+exports[`'statemine' -> 'altair' xcm transfer 'USDT' > xcmPallet transfer > balance on from chain 1`] = `
+{
+  "balance": 999000000,
+  "extra": null,
+  "isFrozen": false,
+  "reason": {
+    "consumer": null,
+  },
+}
+`;
+
+exports[`'statemine' -> 'altair' xcm transfer 'USDT' > xcmPallet transfer > balance on to chain 1`] = `
+{
+  "free": 0,
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`'statemine' -> 'altair' xcm transfer 'USDT' > xcmPallet transfer > from chain hrmp messages 1`] = `[]`;
+
+exports[`'statemine' -> 'altair' xcm transfer 'USDT' > xcmPallet transfer > to chain xcm events 1`] = `[]`;
+
+exports[`'statemine' -> 'altair' xcm transfer 'USDT' > xcmPallet transfer > tx events 1`] = `
+[
+  {
+    "data": [
+      {
+        "Incomplete": [
+          {
+            "proofSize": "(rounded 6200)",
+            "refTime": "(rounded 679000000)",
+          },
+          "Transport",
+        ],
+      },
+    ],
+    "method": "Attempted",
+    "section": "polkadotXcm",
   },
 ]
 `;

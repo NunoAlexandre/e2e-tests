@@ -6,6 +6,7 @@ import { karura } from '../../networks/acala'
 import { statemine } from '../../networks/statemint'
 
 import buildTest from './shared'
+import {altair} from "../../networks/centrifuge";
 
 const tests = [
   // statemine <-> karura
@@ -82,6 +83,40 @@ const tests = [
         tx: tx.xtokens.transfer(basilisk.dai, 10n ** 18n, tx.xtokens.parachainV2(karura.paraId), 5e9),
         fromBalance: query.tokens(basilisk.dai),
         toBalance: query.evm(karura.dai.Erc20, '0x2aef47e62c966f0695d5af370ddc1bc7c56902063eee60853e2872fc0ff4f88c'),
+      },
+    },
+  },
+  // statemine <-> altair
+  {
+    from: 'statemine',
+    to: 'altair',
+    name: 'USDT',
+    test: {
+      xcmPalletHorizontal: {
+        tx: tx.xcmPallet.limitedReserveTransferAssetsV3(
+            statemine.usdt,
+            1e6,
+            tx.xcmPallet.parachainV3(1, altair.paraId)
+        ),
+        fromBalance: query.assets(statemine.usdtIndex),
+        toBalance: query.ormlTokens(altair.usdt),
+      },
+    },
+  },
+  {
+    from: 'altair',
+    to: 'statemine',
+    name: 'USDT',
+    fromStorage: ({ alice }: Context) => ({
+      OrmlTokens: {
+        Accounts: [[[alice.address, altair.usdt], { free: 10e6 }]],
+      },
+    }),
+    test: {
+      xtokenstHorizontal: {
+        tx: tx.xtokens.transfer(altair.usdt, 1e6, tx.xtokens.parachainV2(statemine.paraId)),
+        fromBalance: query.ormlTokens(altair.usdt),
+        toBalance: query.assets(statemine.usdtIndex),
       },
     },
   },
