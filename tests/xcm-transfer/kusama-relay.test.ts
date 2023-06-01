@@ -66,7 +66,6 @@ const tests = [
       },
     },
   },
-
   // kusama <-> altair
   {
     from: 'kusama',

@@ -20,7 +20,7 @@ export default {
 
 export const centrifuge = {
   paraId: 2031,
-  dot: 42259045809535163221576417993425387648n,
+  dot: { ForeignAsset: 5 },
 } as const
 
 export const altair = {

@@ -2,7 +2,8 @@ import { query, tx } from '../../helpers/api'
 
 import { acala } from '../../networks/acala'
 import { astar } from '../../networks/astar'
-import { polkadot } from '../../networks/polkadot'
+import {polkadot} from '../../networks/polkadot'
+import {centrifuge} from '../../networks/centrifuge'
 
 import buildTest from './shared'
 
@@ -85,6 +86,29 @@ const tests = [
       xcmPalletDown: {
         tx: tx.xcmPallet.limitedReserveTransferAssetsV2(polkadot.dot, 1e12, tx.xcmPallet.parachainV2(0, astar.paraId)),
         balance: query.assets(astar.dot),
+      },
+    },
+  },
+  polkadot <-> centrifuge
+  {
+    from: 'polkadot',
+    to: 'centrifuge',
+    name: 'DOT',
+    test: {
+      xcmPalletDown: {
+        tx: tx.xcmPallet.limitedReserveTransferAssetsV2(polkadot.dot, 1e10, tx.xcmPallet.parachainV2(0, centrifuge.paraId)),
+        balance: query.ormlTokens(centrifuge.dot),
+      },
+    },
+  },
+  {
+    from: 'centrifuge',
+    to: 'polkadot',
+    name: 'DOT',
+    test: {
+      xtokensUp: {
+        tx: tx.xtokens.transfer(centrifuge.dot, 1e10, tx.xtokens.relaychainV2),
+        balance: query.ormlTokens(centrifuge.dot),
       },
     },
   },
