@@ -14,6 +14,11 @@ export default {
       System: {
         Account: [[[alice.address], { data: { free: 1000n * 10n ** 18n } }]],
       },
+      OrmlTokens: {
+        accounts: [
+          [[alice.address,  centrifuge.dot], { free: 100 * 1e12 }],
+        ],
+      },
     },
   }),
 } satisfies Config
